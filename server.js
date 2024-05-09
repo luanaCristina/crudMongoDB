@@ -1,8 +1,8 @@
 const express = require("express")
 const app = express()
-const { MongoClient } = require("mongodb-legacy")
+const { MongoClient } = require("mongodb")
 const url = "mongodb+srv://projetodb:projetodb@cluster0.7b2pbg9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-const ObjectId = require("mongodb-legacy").ObjectId
+const ObjectId = require("mongodb").ObjectId
 
 
 const client = new MongoClient(url)
@@ -52,32 +52,30 @@ app.get('/show', (req, res) => {
 })
 //criando o nosso edit
 app.route('/edit/:id')
-.get((req, res)=> {
+.get((req, res) => {
     var id = req.params.id
 
-    db.collection('crud')
-    .find(ObjectId(id))
-    .toArray((err, result)=> {
+    db.collection('crud').find(ObjectId(id)).toArray((err, result) => {
         if(err) return res.send(err)
-        res.render('edit.ejs', 
-    {crud: result})
+        res.render('edit.ejs', {crud: result})
     })
 })
-.post((req, res)=> {
+.post((req, res) => {
     var id = req.params.id
     var name = req.body.name
     var surname = req.body.surname
-    db.collection('crud'.updateOne({
-        _id: ObjectId(id)}, {
-        $set:{
+
+    db.collection('crud').updateOne({_id: ObjectId(id)}, {
+        $set: {
             name: name,
             surname: surname
         }
     }, (err, result) => {
         if(err) return res.send(err)
         res.redirect('/show')
-        console.log('bd atualizado')
-    }
-    ))  
+        console.log('Banco de dados atualizado')
+
+
+    })
 })
 
