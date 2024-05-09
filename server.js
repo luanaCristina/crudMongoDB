@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const { MongoClient } = require("mongodb")
-const url = "mongodb+srv://projetodb:projetodb@cluster0.7b2pbg9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const url = DATABASE_URL 
 const ObjectId = require("mongodb").ObjectId
 
 
