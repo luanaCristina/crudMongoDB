@@ -1,7 +1,9 @@
 const express = require("express")
 const app = express()
 const { MongoClient } = require("mongodb")
-const url = DATABASE_URL 
+const dotenv = require("dotenv")
+dotenv.config()
+const url = process.env.DATABASE_URL
 const ObjectId = require("mongodb").ObjectId
 
 
@@ -65,7 +67,8 @@ app.route('/edit/:id')
     var name = req.body.name
     var surname = req.body.surname
 
-    db.collection('crud').updateOne({_id: ObjectId(id)}, {
+    db.collection('crud')
+    .updateOne({_id: ObjectId(id)}, {
         $set: {
             name: name,
             surname: surname
@@ -74,8 +77,21 @@ app.route('/edit/:id')
         if(err) return res.send(err)
         res.redirect('/show')
         console.log('Banco de dados atualizado')
-
-
     })
 })
+
+app.route ('/delete/:id')
+.get((req, res) => {
+    var id = req.params.id
+
+    db.collection('crud')
+    .deleteOne({_id: ObjectId(id)}, 
+    (err, result) => {
+        if(err) return res.send(500, err)
+        console.log('deletou o banco!')
+        res.redirect('/show')
+    })
+})
+
+
 
