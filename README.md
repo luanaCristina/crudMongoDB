@@ -92,4 +92,11 @@ localhost:3003/index
 <p>Siga todos os fluxos e veja o código funcionando</p>
 <p>Dúvidas???? Adicione comentário na sala de aula na atividade <strong>CRUD - JavaScript + EJS + MongoDB</strong></p>
 
-
+<h1>Estamos usando JavaScript</h1>
+<h2><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">O que é e como usar - Mozila </a></h2>
+<h2><a href="https://eloquentjavascript.net/">Livro Eloquente JavaScript em inglês na web</a></h2>
+<h2><a href="https://github.com/braziljs/eloquente-javascript/">Livro Eloquente JavaScript em Português no GitHub</a></h2>
+<h2><a href="https://www.w3schools.com/js/">O que é e como usar W3school</a></h2>
+<h2><a href="https://www.learn-js.org/">Aprendendo com joguinho - 1 </a></h2>
+<h2><a href="https://code.org/">Aprendendo com joguinho - 2 </a></h2>
+<h2><a href="https://br.codecombat.com/">Aprendendo com joguinho - 2 </a></h2>
