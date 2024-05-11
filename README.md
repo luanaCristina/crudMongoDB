@@ -46,7 +46,7 @@
   },
 ```
 
-<h1>Esconda o suas credenciais usando o dotenv</h1>
+<h1>Esconda as suas credenciais usando o dotenv</h1>
 <h2><a href="https://www.npmjs.com/package/dotenv">instalação e utilização</a></h2>
 <p>Aqui eu criei no nosso projeto um arquivo chamado .env e adicionei a variável DATABASE_URL </p>
 
